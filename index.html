@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title class="text-animate-bounce-in">Marketing Atlas - Professional Marketing Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#BE3C2E',secondary:'#f8f8f8'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white">
+<!-- Navbar -->
+<!-- Navbar -->
+<header class="fixed top-0 left-0 right-0 h-[70px] bg-white shadow-sm z-50">
+    <div class="container mx-auto h-full flex items-center justify-between">
+    <div class="flex items-center">
+    <a href="index.html" id="logo-link" class="ml-0 sm:ml-4 md:ml-[48px] transition-all duration-300 hover:opacity-80 hover:scale-105 inline-block">
+    <img src="https://static.readdy.ai/image/27783f40f8c8c9957915a346071430ca/d333c0207308ce7b94a91f6b5db54485.png" alt="Marketing Atlas Logo" class="h-10 w-auto">
+    </a>
+    </div>
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center space-x-6">
+    <a href="#about" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">About Us</a>
+    <a href="villa-owner.html" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Villa Owners</a>
+    <a href="real-estate.html" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Real Estate</a>
+    <a href="#services" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Our Services</a>
+    <button id="connect-us-btn" class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-300">Connect Us</button>
+    <div id="contact-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+    <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4 relative">
+    <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 cursor-pointer">
+    <i class="ri-close-line ri-lg"></i>
+    </button>
+    <h3 class="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
+    <form id="modal-contact-form" class="space-y-4">
+    <div>
+    <label for="modal-name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+    <input type="text" id="modal-name" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary focus:ring-0" placeholder="Your name">
+    </div>
+    <div>
+    <label for="modal-email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+    <input type="email" id="modal-email" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary focus:ring-0" placeholder="Your email">
+    </div>
+    <div>
+    <label for="modal-subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+    <input type="text" id="modal-subject" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary focus:ring-0" placeholder="How can we help?">
+    </div>
+    <div>
+    <label for="modal-message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+    <textarea id="modal-message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary focus:ring-0" placeholder="Your message"></textarea>
+    </div>
+    <button type="submit" class="w-full bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-all duration-300 font-medium cursor-pointer">Send Message</button>
+    </form>
+    </div>
+    </div>
+    </nav>
+    <!-- Mobile Navigation Toggle -->
+    <div class="md:hidden flex items-center">
+    <button id="mobile-menu-button" class="w-10 h-10 flex items-center justify-center text-gray-700 cursor-pointer">
+    <i class="ri-menu-line ri-2x"></i>
+    </button>
+    </div>
+    </div>
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute top-[70px] left-0 w-full">
+    <div class="container mx-auto px-4 py-4 flex flex-col justify-center space-y-4 text-center">
+    <a href="#about" class="text-gray-700 hover:text-primary transition-colors duration-300 py-2">About Us</a>
+    <a href="villa-owner.html" class="text-gray-700 hover:text-primary transition-colors duration-300 py-2">Villa Owners</a>
+    <a href="real-estate.html" class="text-gray-700 hover:text-primary transition-colors duration-300 py-2">Real Estate</a>
+    <a href="#services" class="text-gray-700 hover:text-primary transition-colors duration-300 py-2">Our Services</a>
+    <button id="mobile-connect-us-btn" class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-300">Connect Us</button>
+    </div>
+    </div>
+    </header>
+
+<!-- Updated Hero Section - Refined Background with Video Background -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+  <!-- Background Image -->
+  <div class="absolute inset-0 z-0">
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Villa Marketing" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+  </div>
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
+
+  <div class="container mx-auto relative z-20 text-center px-6 py-20 fade-in">
+    <!-- <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6 animate-slide-in-up">
+      Premium Marketing for Villas & Real Estate
+    </h1> -->
+    <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6 animate-slide-in-up">
+      Premium Marketing for Villas & Real Estate
+    </h1>
+    <p class="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto mb-10 animate-fade-in">
+      Elevate your visibility, influence your market, and unlock elite branding with Marketing Atlas—crafted exclusively for property professionals.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in delay-200">
+      <a href="#connect" class="bg-[#dc2626] text-white px-8 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-[#b91c1c] transition-all duration-300">
+        Get Started
+      </a>
+      <a href="#services" class="border border-white text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-[#dc2626] transition-all duration-300">
+        View Services
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Animation Utility Classes -->
+<style>
+@keyframes slide-in-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-slide-in-up {
+  animation: slide-in-up 1s ease-out both;
+}
+.animate-fade-in {
+  animation: fade-in 1.2s ease-out both;
+}
+.delay-200 {
+  animation-delay: 0.2s;
+}
+</style>
+
+<!-- Premium Cards -->
+<section id="premium-upgraded" class="bg-gray-50 py-20">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4 text-animate-fade-up">Our Premium Services</h2>
+      <p class="text-lg text-gray-600">Crafted for businesses seeking high-impact, visually elevated marketing experiences.</p>
+    </div>
+
+    <div class="premium-grid">
+      <!-- Card 1 -->
+      <div class="premium-unique-card">
+        <div class="icon-wrapper mb-6">
+          <i class="ri-rocket-2-line glowing-icon"></i>
+        </div>
+        <h3 class="text-2xl font-semibold text-white mb-2">Brand Acceleration</h3>
+        <p class="text-white opacity-90">Launch your identity with our immersive, results-focused campaigns.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="premium-unique-card">
+        <div class="icon-wrapper mb-6">
+          <i class="ri-stack-line glowing-icon"></i>
+        </div>
+        <h3 class="text-2xl font-semibold text-white mb-2">Omnichannel Strategy</h3>
+        <p class="text-white opacity-90">Integrate campaigns seamlessly across digital, social, and offline platforms.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="premium-unique-card">
+        <div class="icon-wrapper mb-6">
+          <i class="ri-lightbulb-flash-line glowing-icon"></i>
+        </div>
+        <h3 class="text-2xl font-semibold text-white mb-2">Creative Innovation</h3>
+        <p class="text-white opacity-90">Stand out with trendsetting design, motion visuals, and storytelling.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="premium-unique-card">
+        <div class="icon-wrapper mb-6">
+          <i class="ri-bubble-chart-line glowing-icon"></i>
+        </div>
+        <h3 class="text-2xl font-semibold text-white mb-2">Behavioral Analytics</h3>
+        <p class="text-white opacity-90">Understand and influence customer journeys through smart data patterns.</p>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="premium-unique-card">
+        <div class="icon-wrapper mb-6">
+          <i class="ri-rocket-2-line glowing-icon"></i>
+        </div>
+        <h3 class="text-2xl font-semibold text-white mb-2">Brand Acceleration</h3>
+        <p class="text-white opacity-90">Launch your identity with our immersive, results-focused campaigns.</p>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="premium-unique-card">
+        <div class="icon-wrapper mb-6">
+          <i class="ri-stack-line glowing-icon"></i>
+        </div>
+        <h3 class="text-2xl font-semibold text-white mb-2">Omnichannel Strategy</h3>
+        <p class="text-white opacity-90">Integrate campaigns seamlessly across digital, social, and offline platforms.</p>
+      </div>      
+    </div>
+  </div>
+</section>
+
+<!-- Villa Owners Section -->
+<section class="villa-owner">
+  <div class="container">
+    <div class="max-w-3xl mx-auto text-center mb-8 sm:mb-12 md:mb-16 fade-in">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">For Villa Owners</h2>
+      <p class="text-lg text-gray-600 leading-relaxed">
+        Maximize your property's potential with our specialized marketing solutions
+      </p>
+    </div>
+
+    <div class="villa-owner-grid">
+      <!-- Property Branding Card -->
+      <div class="service-card re-card" onclick="location.href='villa-owner.html#services'">
+        <div class="re-icon icon-branding">
+          <i class="fas fa-building"></i>
+        </div>
+        <h3 class="re-title">Property Branding</h3>
+        <p class="re-desc">
+          Professional branding and marketing materials tailored for premium villas and real estate.
+        </p>
+        <a href="villa-owner.html#services" class="re-link">View Services <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <!-- Digital Presence Card -->
+      <div class="service-card re-card" onclick="location.href='villa-owner.html#packages'">
+        <div class="re-icon icon-digital">
+          <i class="fas fa-mobile-alt"></i>
+        </div>
+        <h3 class="re-title">Digital Presence</h3>
+        <p class="re-desc">
+          Grow online with expert social media management, SEO, and digital reputation strategies.
+        </p>
+        <a href="villa-owner.html#packages" class="re-link">Explore Packages <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="section-cta animate-on-scroll">
+      <button class="btn btn-primary" onclick="location.href='villa-owner.html'">View More About VILLA OWNERS</button>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Real Estate Section -->
+    <section id="real-estate" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center mb-16 fade-in">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Real Estate Marketing</h2>
+    <p class="text-lg text-gray-600">Comprehensive marketing solutions for real estate professionals and agencies.</p>
+    </div>
+
+    <div class="villa-owner-grid">
+      <!-- Property Branding Card -->
+      <div class="service-card re-card" onclick="location.href='real-estate.html#services'">
+        <div class="re-icon icon-branding">
+          <i class="ri-building-4-line ri-lg text-primary"></i>
+        </div>
+        <h3 class="re-title">Agency Branding</h3>
+        <p class="re-desc">
+          Develop a distinctive brand identity that sets your real estate agency apart from competitors.
+        </p>
+        <a href="real-estate.html#services" class="re-link">View Services <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <!-- Digital Presence Card -->
+      <div class="service-card re-card" onclick="location.href='real-estate.html#packages'">
+        <div class="re-icon icon-digital">
+          <i class="ri-advertisement-line ri-lg text-primary"></i>
+        </div>
+        <h3 class="re-title">Targeted Advertising</h3>
+        <p class="re-desc">
+          Strategic ad campaigns on Google, Facebook, and Instagram to reach qualified buyers.
+        </p>
+        <a href="real-estate.html#packages" class="re-link">Explore Packages <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="section-cta animate-on-scroll">
+      <button class="btn btn-primary" onclick="location.href='real-estate.html'">View More About REAL ESTATE PROFESSIONALS</button>
+      </div>
+      </div>
+    </section>
+    <!-- Services Section -->
+    <section id="services" class="section-padding bg-gray-50">
+        <div class="container mx-auto">
+            <div class="max-w-3xl mx-auto text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+                <p class="text-lg text-gray-600 leading-relaxed">Comprehensive marketing solutions tailored to your specific needs.</p>
+            </div>
+            <div class="responsive-grid-4 fade-in">
+    <div class="bg-white p-6 rounded-lg shadow-md service-card">
+    <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+    <i class="ri-camera-line ri-lg text-primary"></i>
+    </div>
+    <h3 class="text-lg font-semibold mb-2">Professional Photography</h3>
+    <p class="text-gray-600 mb-4">High-quality property photography that showcases your listings in the best light.</p>
+
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-md service-card">
+    <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+    <i class="ri-vidicon-line ri-lg text-primary"></i>
+    </div>
+    <h3 class="text-lg font-semibold mb-2">Video Production</h3>
+    <p class="text-gray-600 mb-4">Engaging property videos and virtual tours that bring listings to life.</p>
+
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-md service-card">
+    <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+    <i class="ri-layout-4-line ri-lg text-primary"></i>
+    </div>
+    <h3 class="text-lg font-semibold mb-2">Website Design</h3>
+    <p class="text-gray-600 mb-4">Custom real estate websites optimized for lead generation and conversion.</p>
+
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-md service-card">
+    <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+    <i class="ri-line-chart-line ri-lg text-primary"></i>
+    </div>
+    <h3 class="text-lg font-semibold mb-2">SEO & Analytics</h3>
+    <p class="text-gray-600 mb-4">Data-driven strategies to improve online visibility and track performance.</p>
+
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-md service-card">
+    <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+    <i class="ri-mail-send-line ri-lg text-primary"></i>
+    </div>
+    <h3 class="text-lg font-semibold mb-2">Email Marketing</h3>
+    <p class="text-gray-600 mb-4">Targeted email campaigns to nurture leads and stay connected with clients.</p>
+
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-md service-card">
+    <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+    <i class="ri-facebook-circle-line ri-lg text-primary"></i>
+    </div>
+    <h3 class="text-lg font-semibold mb-2">Social Media</h3>
+    <p class="text-gray-600 mb-4">Strategic social media management to build brand awareness and engagement.</p>
+
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-md service-card">
+    <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+    <i class="ri-advertisement-line ri-lg text-primary"></i>
+    </div>
+    <h3 class="text-lg font-semibold mb-2">PPC Advertising</h3>
+    <p class="text-gray-600 mb-4">Targeted pay-per-click campaigns on Google and social media platforms.</p>
+
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-md service-card">
+    <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+    <i class="ri-braces-line ri-lg text-primary"></i>
+    </div>
+    <h3 class="text-lg font-semibold mb-2">Content Creation</h3>
+    <p class="text-gray-600 mb-4">Compelling property descriptions, blog posts, and marketing materials.</p>
+
+    </div>
+
+    <div class="bg-white p-6 rounded-lg shadow-md service-card">
+    <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+      <i class="ri-star-line ri-lg text-primary"></i>
+    </div>
+    <h3 class="text-lg font-semibold mb-2">Influencer Marketing</h3>
+    <p class="text-gray-600 mb-4">Leverage trusted voices in the luxury space to promote your property and boost visibility.</p>
+    </div>
+    </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="section-padding relative overflow-hidden bg-gradient-to-br from-[#fff5f0] via-[#fffaf7] to-[#ffece0]">
+      <div class="container mx-auto text-center animate-on-scroll">
+        <h2 class="text-4xl font-bold text-gray-800 mb-4 tracking-tight">The Story Behind Marketing Atlas</h2>
+        <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto"> We're not just marketers — we're storytellers, brand sculptors, and media technicians tailored for the world of luxury real estate and villa marketing. While we’re a startup, our professional edge comes from attention to detail, strategic visual planning, and personalized campaign flows.</p>
+    
+        <div class="grid md:grid-cols-3 gap-10 mb-20">
+          <!-- Cinematic Creator -->
+          <div class="tilt-card premium-unique-card">
+            <!-- <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_tnrzlN.json" background="transparent" speed="1" loop autoplay></lottie-player> -->
+            <h3 class="text-xl font-semibold mt-4">Cinematic Creator</h3>
+            <p class="text-sm text-white/90">Drone footage, walkthrough reels, and visual storytelling.</p>
+          </div>
+    
+          <!-- Branding Specialist -->
+          <div class="tilt-card premium-unique-card">
+            <!-- <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_bhw1ul4g.json" background="transparent" speed="1" loop autoplay></lottie-player> -->
+            <h3 class="text-xl font-semibold mt-4">Branding Specialist</h3>
+            <p class="text-sm text-white/90">Logo systems, tone of voice, villa media kit creation.</p>
+          </div>
+    
+          <!-- Social Media Strategist -->
+          <div class="tilt-card premium-unique-card">
+            <!-- <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_tfb3estd.json" background="transparent" speed="1" loop autoplay></lottie-player> -->
+            <h3 class="text-xl font-semibold mt-4">Social Strategist</h3>
+            <p class="text-sm text-white/90">Optimized campaigns across Instagram, Facebook, YouTube & more.</p>
+          </div>
+        </div>
+
+        <div class="additional-tilt-grid">
+          <!-- Required Scripts -->
+          <script src="https://unpkg.com/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+          <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+          <!-- Lead Generation Strategist -->
+          <div class="threed-card">
+            <lottie-player
+              src="https://assets7.lottiefiles.com/packages/lf20_kkflmtur.json"
+              background="transparent" speed="1" loop autoplay
+              class="w-full h-64 mx-auto">
+            </lottie-player>
+            <h3>Lead Strategist</h3>
+            <p>Funnels and CRM automation tailored for real estate inquiries.</p>
+          </div>
+        
+          <!-- Social Media Experience Designer -->
+          <div class="threed-card">
+            <lottie-player
+              src="https://assets4.lottiefiles.com/packages/lf20_tfb3estd.json"
+              background="transparent" speed="1" loop autoplay
+              class="w-full h-64 mx-auto">
+            </lottie-player>
+            <h3>Social Media Experience Designer</h3>
+            <p>High-converting campaigns across Instagram & YouTube.</p>
+          </div>
+        
+          <!-- Aerial & Cinematic Content Creator -->
+          <div class="threed-card">
+            <lottie-player
+              src="https://assets9.lottiefiles.com/packages/lf20_tnrzlN.json"
+              background="transparent" speed="1" loop autoplay
+              class="w-full h-64 mx-auto">
+            </lottie-player>
+            <h3>Cinematic Creator</h3>
+            <p>Drone footage and cinematic edits to captivate buyers visually.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+<!-- Animations -->
+<style>
+  /* ====== Premium About Us Section Styles ====== */
+/* Entrance Animation */
+.motion-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.motion-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tilt-card {
+  background: linear-gradient(to bottom right, #315e64, #5a550e);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  color: white;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.tilt-card:hover {
+  transform: rotateY(4deg) rotateX(2deg) scale(1.03);
+  box-shadow: 0 30px 60px rgba(190, 60, 46, 0.5);
+}
+
+.tilt-card lottie-player {
+  max-height: 160px;
+  margin-bottom: 1rem;
+}
+
+.tilt-card h3 {
+  color: #fff;
+}
+
+.tilt-card p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.tilt-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Lottie size control */
+lottie-player {
+  max-height: 180px;
+  margin-bottom: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 3rem 1rem;
+  }
+  .tilt-card {
+    padding: 1.5rem;
+  }
+  lottie-player {
+    max-height: 140px;
+  }
+}
+
+/* === Additional Cards for About Us === */
+/* Uniform card styling ensured */
+.additional-tilt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.additional-tilt-grid .tilt-card,
+.additional-tilt-grid .threed-card {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 2rem 1rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.additional-tilt-grid .tilt-card:hover,
+.additional-tilt-grid .threed-card:hover {
+  transform: scale(1.05);
+}
+
+.additional-tilt-grid h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  color: #1a1a1a;
+}
+
+.additional-tilt-grid p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-top: 0.5rem;
+}
+
+/* Animate icons on scroll */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+</style>
+
+<script>
+  // 3D Tilt
+VanillaTilt.init(document.querySelectorAll(".tilt-card"), {
+  max: 10,
+  speed: 400,
+  glare: true,
+  "max-glare": 0.15
+});
+
+// Scroll Observer
+const revealEls = document.querySelectorAll(".animate-on-scroll, .text-animate-left, .text-animate-right, .text-animate-bounce-in, .text-animate-zoom-in, .text-animate-pop-up, .text-animate-skew-left, .text-animate-slide-down, .text-animate-fade-scale, .text-animate-fade-up");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      entry.target.style.animationPlayState = "running"; // Allow custom text animation to begin
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+revealEls.forEach((el) => {
+  if (el.classList.contains("text-animate-left") || el.classList.contains("text-animate-right") || el.classList.contains("text-animate-bounce-in")) {
+    el.style.animationPlayState = "paused";
+  }
+  observer.observe(el);
+});
+
+</script>
+
+    <!-- Testimonials Section -->
+    <!-- <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center mb-16 fade-in">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+    <p class="text-lg text-gray-600">Hear from real estate professionals who have transformed their marketing with our services.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 fade-in">
+    <div class="bg-white p-8 rounded-lg shadow-md">
+    <div class="flex items-center mb-4">
+    <div class="text-primary">
+    <i class="ri-star-fill"></i>
+    <i class="ri-star-fill"></i>
+    <i class="ri-star-fill"></i>
+    <i class="ri-star-fill"></i>
+    <i class="ri-star-fill"></i>
+    </div>
+    </div>
+    <p class="text-gray-600 mb-6">"Marketing Atlas transformed our property listings with stunning photography and targeted advertising. We've seen a 40% increase in qualified leads since working with them."</p>
+    <div class="flex items-center">
+    <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center mr-4">
+    <i class="ri-user-3-line ri-lg text-gray-500"></i>
+    </div>
+    <div>
+    <h4 class="font-semibold">Michael Richardson</h4>
+    <p class="text-sm text-gray-500">Luxury Homes Realty</p>
+    </div>
+    </div>
+    </div>
+    <div class="bg-white p-8 rounded-lg shadow-md">
+    <div class="flex items-center mb-4">
+    <div class="text-primary">
+    <i class="ri-star-fill"></i>
+    <i class="ri-star-fill"></i>
+    <i class="ri-star-fill"></i>
+    <i class="ri-star-fill"></i>
+    <i class="ri-star-fill"></i>
+    </div>
+    </div>
+    <p class="text-gray-600 mb-6">"The team at Marketing Atlas understands the unique challenges of villa marketing. Their comprehensive approach has helped us attract high-value clients and increase our bookings."</p>
+    <div class="flex items-center">
+    <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center mr-4">
+    <i class="ri-user-3-line ri-lg text-gray-500"></i>
+    </div>
+    <div>
+    <h4 class="font-semibold">Sophia Martinez</h4>
+    <p class="text-sm text-gray-500">Villa Collection Group</p>
+    </div>
+    </div>
+    </div>
+    <div class="bg-white p-8 rounded-lg shadow-md">
+    <div class="flex items-center mb-4">
+    <div class="text-primary">
+    <i class="ri-star-fill"></i>
+    <i class="ri-star-fill"></i>
+    <i class="ri-star-fill"></i>
+    <i class="ri-star-fill"></i>
+    <i class="ri-star-fill"></i>
+    </div>
+    </div>
+    <p class="text-gray-600 mb-6">"Our agency's online presence has completely transformed since working with Marketing Atlas. Their website design and SEO strategies have put us ahead of our competition."</p>
+    <div class="flex items-center">
+    <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center mr-4">
+    <i class="ri-user-3-line ri-lg text-gray-500"></i>
+    </div>
+    <div>
+    <h4 class="font-semibold">David Thompson</h4>
+    <p class="text-sm text-gray-500">Premier Properties</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section> -->
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary bg-opacity-5">
+    <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto text-center fade-in">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Ready to Elevate Your Marketing Strategy?</h2>
+    <p class="text-lg text-gray-600 mb-8">Schedule a consultation with our marketing experts and discover how we can help you achieve your goals.</p>
+    <a href="https://wa.me/917045560922?text=Hi%20Team%20Marketing%20Atlas%2C%0AI%27m%20interested%20in%20getting%20started%20with%20your%20services.%20Please%20guide%20me%20further." target="_blank">
+      <button class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-all duration-300 font-medium cursor-pointer">Get Started Today</button>
+    </a>
+
+    </div>
+    </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="connect" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto fade-in">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <div>
+    <h2 class="text-3xl font-bold text-gray-900 mb-6">Connect With Us</h2>
+    <p class="text-lg text-gray-600 mb-8">Have questions about our services? Reach out to our team for personalized assistance.</p>
+    <div class="mb-8">
+    <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
+    <div class="space-y-4">
+    <div class="flex items-center">
+    <div class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+    <i class="ri-map-pin-line text-primary"></i>
+    </div>
+    <p class="text-gray-600">123 Marketing Street, New York, NY 10001</p>
+    </div>
+    <div class="flex items-center">
+    <div class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+    <i class="ri-phone-line text-primary"></i>
+    </div>
+    <p class="text-gray-600">+91 9967352803</p>
+    </div>
+    <div class="flex items-center">
+    <div class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+    <i class="ri-mail-line text-primary"></i>
+    </div>
+    <p class="text-gray-600">marketingatlasin@gmail.com</p>
+    </div>
+    </div>
+    </div>
+    <div>
+    <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+    <div class="flex space-x-4">
+    <a href="https://www.instagram.com/marketingatlas.in" target="_blank" class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors duration-300 cursor-pointer">
+      <i class="ri-instagram-line"></i>
+    </a>
+    <a href="#" class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors duration-300 cursor-pointer">
+      <i class="ri-facebook-line"></i>
+    </a>
+    <a href="https://wa.me/919967352803" target="_blank" class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors duration-300 cursor-pointer">
+      <i class="ri-whatsapp-line"></i>
+    </a>
+    <a href="https://www.youtube.com/@MarketingAtlasOfficial" target="_blank" class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors duration-300 cursor-pointer">
+      <i class="fab fa-youtube"></i>
+    </a>
+    </div>
+    </div>
+    </div>
+    <div>
+    <h2 class="text-3xl font-bold text-gray-900 mb-6">Get in Touch</h2>
+<form class="space-y-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+          <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary focus:ring-0" placeholder="Your name">
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+          <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary focus:ring-0" placeholder="Your email">
+        </div>
+      </div>
+      <div>
+        <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+        <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary focus:ring-0" placeholder="How can we help?">
+      </div>
+      <div>
+        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+        <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary focus:ring-0" placeholder="Your message"></textarea>
+      </div>
+      <div class="flex items-start">
+        <label class="custom-checkbox flex items-start">
+          <input type="checkbox" class="hidden">
+          <span class="checkmark"></span>
+          <span class="ml-7 text-sm text-gray-600">I agree to receive marketing communications from Marketing Atlas.</span>
+        </label>
+      </div>
+      <button type="submit" class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-all duration-300 font-medium cursor-pointer">
+        Send Message
+      </button>
+    </form>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    <!-- Newsletter Section -->
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white section-padding">
+        <div class="container mx-auto">
+            <div class="footer-grid mb-8 sm:mb-10 md:mb-12">
+    <div>
+    <a href="#" class="mb-6 inline-block">
+    <img src="https://static.readdy.ai/image/27783f40f8c8c9957915a346071430ca/d333c0207308ce7b94a91f6b5db54485.png" alt="Marketing Atlas Logo" class="h-10 w-auto brightness-0 invert">
+    </a>
+    <p class="text-gray-400 mb-6">Comprehensive marketing solutions for real estate professionals and villa owners.</p>
+    <div class="flex space-x-4">
+    <a href="https://www.instagram.com/marketingatlas.in" target="_blank" class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+      <i class="ri-instagram-line"></i>
+    </a>
+    <a href="https://wa.me/919967352803" target="_blank" class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+      <i class="ri-whatsapp-line"></i>
+    </a>
+    <a href="#" class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+      <i class="ri-facebook-line"></i>
+    </a>
+    </div>
+    </div>
+    <div>
+    <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+    <ul class="space-y-3">
+    <li><a href="#about" class="text-gray-400 hover:text-white transition-colors cursor-pointer">About Us</a></li>
+    <li><a href="villa-owner.html" class="text-gray-400 hover:text-white transition-colors cursor-pointer">Villa Owners</a></li>
+    <li><a href="real-estate.html" class="text-gray-400 hover:text-white transition-colors cursor-pointer">Real Estate</a></li>
+    <li><a href="#services" class="text-gray-400 hover:text-white transition-colors cursor-pointer">Our Services</a></li>
+    <li><a href="#connect" class="text-gray-400 hover:text-white transition-colors cursor-pointer">Connect Us</a></li>
+    </ul>
+    </div>
+    <div>
+    <h3 class="text-lg font-semibold mb-6">Services</h3>
+    <ul class="space-y-3">
+    <li><a href="#" class="text-gray-400 hover:text-white transition-colors cursor-pointer">Professional Photography</a></li>
+    <li><a href="#" class="text-gray-400 hover:text-white transition-colors cursor-pointer">Video Production</a></li>
+    <li><a href="#" class="text-gray-400 hover:text-white transition-colors cursor-pointer">Website Design</a></li>
+    <li><a href="#" class="text-gray-400 hover:text-white transition-colors cursor-pointer">SEO & Analytics</a></li>
+    <li><a href="#" class="text-gray-400 hover:text-white transition-colors cursor-pointer">Social Media Marketing</a></li>
+    </ul>
+    </div>
+    <div>
+    <h3 class="text-lg font-semibold mb-6">Contact Us</h3>
+    <ul class="space-y-3">
+    <li class="flex items-start">
+    <i class="ri-map-pin-line mt-1 mr-3 text-primary"></i>
+    <span class="text-gray-400">123 Marketing Street, New York, NY 10001</span>
+    </li>
+    <li class="flex items-center">
+    <i class="ri-phone-line mr-3 text-primary"></i>
+    <span class="text-gray-400">+91 9967352803</span>
+    </li>
+    <li class="flex items-center">
+    <i class="ri-mail-line mr-3 text-primary"></i>
+    <span class="text-gray-400">marketingatlasin@gmail.com</span>
+    </li>
+    <li class="flex items-center">
+    <i class="ri-time-line mr-3 text-primary"></i>
+    <span class="text-gray-400">Mon-Fri: 9:00 AM - 6:00 PM</span>
+    </li>
+    </ul>
+    </div>
+    </div>
+    <div class="border-t border-gray-800 pt-8">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+    <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 Marketing Atlas. All rights reserved.</p>
+    <div class="flex space-x-6">
+    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors cursor-pointer">Privacy Policy</a>
+    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors cursor-pointer">Terms of Service</a>
+    </div>
+    </div>
+    </footer>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919967352803" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+      <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Icon">
+    </a>
+<script src="script.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const forms = document.querySelectorAll("form");
+  
+    forms.forEach((form) => {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+  
+        const name = form.querySelector("[name='name']")?.value || "";
+        const email = form.querySelector("[name='email']")?.value || "";
+        const phone = form.querySelector("[name='phone']")?.value || "";
+        const company = form.querySelector("[name='company']")?.value || "";
+        const subject = form.querySelector("[name='subject']")?.value || "";
+        const projectType = form.querySelector("[name='projectType']")?.value || "";
+        const message = form.querySelector("[name='message']")?.value || "";
+  
+        const whatsappText = `
+  *"New Enquiry from"*
+  
+  *Full Name:* ${name}
+  *Email:* ${email}
+  ${subject ? `*Subject:* ${subject}` : ""}
+  *Message:* ${message}
+        `;
+  
+        const encoded = encodeURIComponent(whatsappText);
+        const number = "917045560922";
+        const url = `https://wa.me/${number}?text=${encoded}`;
+        window.open(url, "_blank");
+      });
+    });
+  });
+  </script>
+</body>
+</html> 
