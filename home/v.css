@@ -63,23 +63,13 @@
     }
   }
 
-  .video-carousel-container {
-    position: relative;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 12px 24px rgba(255, 253, 253, 0.08);
-    max-width: 800px;
-    margin: 0 auto 80px;
-  }
-
   .swiper-container {
     width: 100%;
     overflow: hidden;
     position: relative;
     touch-action: pan-y;
   }
-
+  
   .swiper-slide {
     background: transparent;
     display: flex;
@@ -89,6 +79,12 @@
     overflow: hidden;
   }
 
+      /* Move swiper pagination away from video controls */
+    .swiper-pagination {
+      position: relative;
+      margin-top: 20px;
+    }
+
   .video-carousel-container {
     position: relative;
     padding: 40px 20px;
@@ -97,9 +93,9 @@
     max-width: 900px;
     margin: 0 auto 100px;
     /*background: linear-gradient(135deg, #1a1a1a, #2e2e2e);*/
-    background: rgb(252, 252, 252);
+    background: rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(8px);
-    border: 1px solid rgb(255, 255, 255);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2);
   }
 

@@ -20,6 +20,7 @@
   <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
   <script src="https://cdn.tailwindcss.com/3.4.16"></script>
   <script>tailwind.config={theme:{extend:{colors:{primary:'#BE3C2E',secondary:'#f8f8f8'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="real-estate.css">
   <link rel="stylesheet" href="v.css">
@@ -1004,29 +1005,40 @@
     }
   });
 
-  // Setup Plyr players
+  // Initialize Plyr players
   const players = Plyr.setup('.plyr', {
-      controls: [
-        'play-large', 'play', 'progress', 'current-time', 'duration',
-        'mute', 'volume', 'captions', 'settings', 'fullscreen'
-      ],
-      keyboard: {
-        focused: true,  // Only affects the focused player
-        global: false   // Prevent global keybindings (fixes spacebar issue)
-      }
-    });
-  
-    // Ensure only one video plays at a time
-    players.forEach((player, index) => {
-      player.on('play', () => {
-        players.forEach((otherPlayer, otherIndex) => {
-          if (otherIndex !== index) {
-            otherPlayer.pause();
-          }
-        });
+    controls: [
+      'play-large', 'play', 'progress', 'current-time', 'duration',
+      'mute', 'volume', 'captions', 'settings', 'fullscreen'
+    ],
+    keyboard: {
+      focused: true,
+      global: false
+    }
+  });
+
+  // Allow only one video to play at a time
+  players.forEach((player, currentIndex) => {
+    player.on('play', () => {
+      players.forEach((otherPlayer, otherIndex) => {
+        if (otherIndex !== currentIndex) {
+          otherPlayer.pause();
+        }
       });
     });
+
+    // Add tap/click-to-toggle play/pause on video window
+    const videoElement = player.elements.container.querySelector('video');
+    videoElement.addEventListener('click', (e) => {
+      if (player.playing) {
+        player.pause();
+      } else {
+        player.play();
+      }
+    });
+  });
 </script>
+
 
   <!-- Contact Section -->
   <section id="connect" class="py-20 bg-white">
