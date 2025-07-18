@@ -402,48 +402,6 @@ header {
   transition: color 0.3s ease;
 }
 
-/* .re-card {
-  background: var(--white);
-  padding: 2.5rem;
-  border-radius: 12px;
-  box-shadow: var(--shadow-md);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  background: #FFF;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(10px);
-  position: relative;
-  overflow: hidden;
-  border-left: 4px solid var(--primary-red);
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.re-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #BE3C2E, #ff6b47);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-
-.re-card:hover::before {
-  transform: scaleX(1);
-}
-
-.re-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-} */
-
-/* .re-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-xl);
-} */
-
 .re-icon {
   font-size: 2.5rem;
   color: #e63946;
@@ -651,6 +609,44 @@ header {
   .scroll-container {
     gap: 2rem;
     padding: 0 1rem 1rem 1rem;
+  }
+}
+
+
+.section-title,
+.text-4xl,
+.text-5xl,
+.text-6xl,
+.md\:text-6xl {
+  font-size: 1.5rem !important;
+  font-weight: bold;
+  line-height: 1.2 !important;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .section-title,
+  .text-4xl,
+  .text-5xl,
+  .text-6xl,
+  .md\:text-6xl {
+    font-size: 2rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .section-title,
+  .text-4xl,
+  .text-5xl,
+  .text-6xl,
+  .md\:text-6xl {
+    font-size: 2.5rem !important;
   }
 }
 
@@ -1014,7 +1010,7 @@ input, textarea, select {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 688px) {
   .premium-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -1028,39 +1024,37 @@ input, textarea, select {
 
 /* Reuse and override premium card style */
 .premium-unique-card {
-  background: linear-gradient(135deg, #0F172A, #1E293B);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
   padding: 2rem;
-  color: white;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.5s ease;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
-  transform-style: preserve-3d;
+  background: linear-gradient(145deg, #262626, #b10505);
+  border-radius: 1.5rem;
+  /*min-height: 280px;  Ensures enough space for content centering */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .premium-unique-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 30px 60px rgba(190, 60, 46, 0.5);
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.15);
 }
 
-.premium-unique-card::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at center, rgba(255,255,255,0.05), transparent 70%);
-  animation: swirlRotate 10s linear infinite;
-  z-index: 0;
+.premium-unique-card .icon-wrapper {
+  font-size: 2rem;
+  color: #fff;
 }
 
-.premium-unique-card * {
-  position: relative;
-  z-index: 1;
+.premium-unique-card h3 {
+  margin-top: 1rem;
+}
+
+.premium-unique-card p {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
 }
 
 .icon-wrapper {

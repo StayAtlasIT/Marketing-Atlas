@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="https://static.readdy.ai/image/27783f40f8c8c9957915a346071430ca/d333c0207308ce7b94a91f6b5db54485.png">
 <title class="text-animate-bounce-in">Marketing Atlas - Professional Marketing Services</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,14 +11,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="v.css">
 
 <script src="https://cdn.tailwindcss.com/3.4.16"></script>
 <script>tailwind.config={theme:{extend:{colors:{primary:'#BE3C2E',secondary:'#f8f8f8'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-white">
-<!-- Navbar -->
 <!-- Navbar -->
 <header class="fixed top-0 left-0 right-0 h-[70px] bg-white shadow-sm z-50">
     <div class="container mx-auto h-full flex items-center justify-between">
@@ -27,10 +30,10 @@
     </a>
     </div>
     <!-- Desktop Navigation -->
-    <nav class="hidden md:flex items-center space-x-6">
+    <nav class="hidden lg:flex items-center space-x-6">
     <a href="#about" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">About Us</a>
-    <a href="villa-owner.html" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Villa Owners</a>
-    <a href="real-estate.html" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Real Estate</a>
+    <a href="villa-owner.html" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">For Villa Owners</a>
+    <a href="real-estate.html" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Property Marketing</a>
     <a href="#services" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Our Services</a>
     <button id="connect-us-btn" class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-300">Connect Us</button>
     <div id="contact-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
@@ -62,18 +65,18 @@
     </div>
     </nav>
     <!-- Mobile Navigation Toggle -->
-    <div class="md:hidden flex items-center">
+    <div class="lg:hidden flex items-center">
     <button id="mobile-menu-button" class="w-10 h-10 flex items-center justify-center text-gray-700 cursor-pointer">
     <i class="ri-menu-line ri-2x"></i>
     </button>
     </div>
     </div>
     <!-- Mobile Navigation Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute top-[70px] left-0 w-full">
+    <div id="mobile-menu" class="hidden lg:hidden bg-white shadow-lg absolute top-[70px] left-0 w-full">
     <div class="container mx-auto px-4 py-4 flex flex-col justify-center space-y-4 text-center">
     <a href="#about" class="text-gray-700 hover:text-primary transition-colors duration-300 py-2">About Us</a>
-    <a href="villa-owner.html" class="text-gray-700 hover:text-primary transition-colors duration-300 py-2">Villa Owners</a>
-    <a href="real-estate.html" class="text-gray-700 hover:text-primary transition-colors duration-300 py-2">Real Estate</a>
+    <a href="villa-owner.html" class="text-gray-700 hover:text-primary transition-colors duration-300 py-2">For Villa Owners</a>
+    <a href="real-estate.html" class="text-gray-700 hover:text-primary transition-colors duration-300 py-2">Property Marketing</a>
     <a href="#services" class="text-gray-700 hover:text-primary transition-colors duration-300 py-2">Our Services</a>
     <button id="mobile-connect-us-btn" class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-300">Connect Us</button>
     </div>
@@ -130,10 +133,132 @@
 .delay-200 {
   animation-delay: 0.2s;
 }
+  /* ====== Premium About Us Section Styles ====== */
+/* Entrance Animation */
+.motion-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.motion-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tilt-card {
+  background: linear-gradient(to bottom right, #0e0101, #444343);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  color: white;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.tilt-card:hover {
+  transform: rotateY(4deg) rotateX(2deg) scale(1.03);
+  box-shadow: 0 30px 60px rgba(190, 60, 46, 0.5);
+}
+
+.tilt-card lottie-player {
+  max-height: 160px;
+  margin-bottom: 1rem;
+}
+
+.tilt-card h3 {
+  color: #fff;
+}
+
+.tilt-card p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.tilt-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Lottie size control */
+lottie-player {
+  max-height: 180px;
+  margin-bottom: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 3rem 1rem;
+  }
+  .tilt-card {
+    padding: 1.5rem;
+  }
+  lottie-player {
+    max-height: 140px;
+  }
+}
+
+/* === Additional Cards for About Us === */
+/* Uniform card styling ensured */
+.additional-tilt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.additional-tilt-grid .tilt-card,
+.additional-tilt-grid .threed-card {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 2rem 1rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.additional-tilt-grid .tilt-card:hover,
+.additional-tilt-grid .threed-card:hover {
+  transform: scale(1.05);
+}
+
+.additional-tilt-grid h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  color: #1a1a1a;
+}
+
+.additional-tilt-grid p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-top: 0.5rem;
+}
+
+/* Animate icons on scroll */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Adjusted Header Sizes for Mobile */
+.hero-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: center;
+}
+
 </style>
 
 <!-- Premium Cards -->
-<section id="premium-upgraded" class="bg-gray-50 py-20">
+<section id="premium-upgraded" class="bg-gray-50 py-10">
   <div class="container mx-auto px-4">
     <div class="max-w-3xl mx-auto text-center mb-16">
       <h2 class="text-4xl font-bold text-gray-900 mb-4 text-animate-fade-up">Our Premium Services</h2>
@@ -235,7 +360,10 @@
     </div>
 
     <div class="section-cta animate-on-scroll">
-      <button class="btn btn-primary" onclick="location.href='villa-owner.html'">View More About VILLA OWNERS</button>
+      <button class="btn btn-primary responsive-btn-text" onclick="location.href='villa-owner.html'">
+        <span class="btn-line-1">View More About</span><br class="mobile-br">
+        <span class="btn-line-2">VILLA OWNERS</span>
+      </button>
     </div>
   </div>
 </section>
@@ -245,7 +373,7 @@
     <section id="real-estate" class="py-20 bg-white">
     <div class="container mx-auto px-4">
     <div class="max-w-3xl mx-auto text-center mb-16 fade-in">
-    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Real Estate Marketing</h2>
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Real Estate Marketing</h2>
     <p class="text-lg text-gray-600">Comprehensive marketing solutions for real estate professionals and agencies.</p>
     </div>
 
@@ -276,15 +404,18 @@
     </div>
 
     <div class="section-cta animate-on-scroll">
-      <button class="btn btn-primary" onclick="location.href='real-estate.html'">View More About REAL ESTATE PROFESSIONALS</button>
-      </div>
+      <button class="btn btn-primary responsive-btn-text" onclick="location.href='real-estate.html'">
+        <span class="btn-line-1">View More About</span><br class="mobile-br">
+        <span class="btn-line-2">Property Marketing</span>
+      </button>
+    </div>
       </div>
     </section>
     <!-- Services Section -->
     <section id="services" class="section-padding bg-gray-50">
         <div class="container mx-auto">
             <div class="max-w-3xl mx-auto text-center mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Our Services</h2>
                 <p class="text-lg text-gray-600 leading-relaxed">Comprehensive marketing solutions tailored to your specific needs.</p>
             </div>
             <div class="responsive-grid-4 fade-in">
@@ -363,6 +494,106 @@
     </div>
     </section>
 
+  <!-- OUR RECENT WORK SECTION -->
+  <section class="hero">
+    <h1>Our Recent Work</h1>
+    <p class="text-lg text-gray-600 mb-10 max-w-3xl mx-auto">Explore our gallery of high-impact short-form videos crafted for reels, TikTok, and shorts — all optimized for engagement and aesthetic impact.
+      A glimpse into the quality we deliver — curated walkthroughs, high-end cinematics, and premium real estate promotions.</p>
+    <div class="tagline">Swipe through our latest work</div>
+  </section>
+
+  <!-- Video Carousel -->
+  <section class="video-carousel-container">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+
+        <!-- Slide 1 -->
+<div class="swiper-slide">
+  <div class="video-wrapper">
+    <video class="plyr" controls playsinline preload="none" poster="1.png">
+      <source src="SIERRA VERTICAL FINAL.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+<!-- Slide 2 -->
+<div class="swiper-slide">
+  <div class="video-wrapper">
+    <video class="plyr" controls playsinline preload="none" poster="2.png">
+      <source src="NYSA GRADED FINAL.MOV" type="video/mp4" />
+    </video>
+  </div>
+</div>
+      </div>
+      <!-- Navigation -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+
+      <!-- Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
+<script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+
+<script>
+  const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1.1,
+    spaceBetween: 10,
+    grabCursor: true,
+    loop: false,
+    allowTouchMove: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 1.2,
+        spaceBetween: 10
+      },
+      768: {
+        slidesPerView: 1.5,
+        spaceBetween: 20
+      },
+      1024: {
+        slidesPerView: 2,
+        spaceBetween: 30
+      }
+    }
+  });
+
+  // Setup Plyr players
+  const players = Plyr.setup('.plyr', {
+      controls: [
+        'play-large', 'play', 'progress', 'current-time', 'duration',
+        'mute', 'volume', 'captions', 'settings', 'fullscreen'
+      ],
+      keyboard: {
+        focused: true,  // Only affects the focused player
+        global: false   // Prevent global keybindings (fixes spacebar issue)
+      }
+    });
+  
+    // Ensure only one video plays at a time
+    players.forEach((player, index) => {
+      player.on('play', () => {
+        players.forEach((otherPlayer, otherIndex) => {
+          if (otherIndex !== index) {
+            otherPlayer.pause();
+          }
+        });
+      });
+    });
+</script>
+
+    
     <!-- About Us Section -->
     <section id="about" class="section-padding relative overflow-hidden bg-gradient-to-br from-[#fff5f0] via-[#fffaf7] to-[#ffece0]">
       <div class="container mx-auto text-center animate-on-scroll">
@@ -431,125 +662,6 @@
         </div>
       </div>
     </section>
-    
-
-<!-- Animations -->
-<style>
-  /* ====== Premium About Us Section Styles ====== */
-/* Entrance Animation */
-.motion-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.motion-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.tilt-card {
-  background: linear-gradient(to bottom right, #315e64, #5a550e);
-  border-radius: 1.5rem;
-  padding: 2rem;
-  color: white;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
-  transform-style: preserve-3d;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.tilt-card:hover {
-  transform: rotateY(4deg) rotateX(2deg) scale(1.03);
-  box-shadow: 0 30px 60px rgba(190, 60, 46, 0.5);
-}
-
-.tilt-card lottie-player {
-  max-height: 160px;
-  margin-bottom: 1rem;
-}
-
-.tilt-card h3 {
-  color: #fff;
-}
-
-.tilt-card p {
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.tilt-card > * {
-  position: relative;
-  z-index: 1;
-}
-
-/* Lottie size control */
-lottie-player {
-  max-height: 180px;
-  margin-bottom: 1rem;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .section-padding {
-    padding: 3rem 1rem;
-  }
-  .tilt-card {
-    padding: 1.5rem;
-  }
-  lottie-player {
-    max-height: 140px;
-  }
-}
-
-/* === Additional Cards for About Us === */
-/* Uniform card styling ensured */
-.additional-tilt-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.5rem;
-  margin-top: 3rem;
-}
-
-.additional-tilt-grid .tilt-card,
-.additional-tilt-grid .threed-card {
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  padding: 2rem 1rem;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.additional-tilt-grid .tilt-card:hover,
-.additional-tilt-grid .threed-card:hover {
-  transform: scale(1.05);
-}
-
-.additional-tilt-grid h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-top: 1rem;
-  color: #1a1a1a;
-}
-
-.additional-tilt-grid p {
-  font-size: 0.95rem;
-  color: #444;
-  margin-top: 0.5rem;
-}
-
-/* Animate icons on scroll */
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-out;
-}
-
-.animate-on-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-</style>
 
 <script>
   // 3D Tilt
@@ -586,7 +698,7 @@ revealEls.forEach((el) => {
     <section class="py-20 bg-primary bg-opacity-5">
     <div class="container mx-auto px-4">
     <div class="max-w-4xl mx-auto text-center fade-in">
-    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Ready to Elevate Your Marketing Strategy?</h2>
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Ready to Elevate Your Marketing Strategy?</h2>
     <p class="text-lg text-gray-600 mb-8">Schedule a consultation with our marketing experts and discover how we can help you achieve your goals.</p>
     <a href="https://wa.me/919967352803?text=Hi%20Team%20Marketing%20Atlas%2C%0AI%27m%20interested%20in%20getting%20started%20with%20your%20services.%20Please%20guide%20me%20further." target="_blank">
       <button class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-all duration-300 font-medium cursor-pointer">Get Started Today</button>
@@ -601,7 +713,7 @@ revealEls.forEach((el) => {
     <div class="max-w-6xl mx-auto fade-in">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
     <div>
-    <h2 class="text-3xl font-bold text-gray-900 mb-6">Connect With Us</h2>
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Connect With Us</h2>
     <p class="text-lg text-gray-600 mb-8">Have questions about our services? Reach out to our team for personalized assistance.</p>
     <div class="mb-8">
     <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
@@ -645,7 +757,7 @@ revealEls.forEach((el) => {
     </div>
     </div>
     <div>
-    <h2 class="text-3xl font-bold text-gray-900 mb-6">Get in Touch</h2>
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Get in Touch</h2>
 <form class="space-y-6">
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
@@ -758,6 +870,13 @@ revealEls.forEach((el) => {
     <a href="https://wa.me/919967352803" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
       <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Icon">
     </a>
+    <!-- VIDEO MODAL POPUP -->
+    <div id="videoModal" class="fixed inset-0 z-50 bg-black bg-opacity-70 hidden items-center justify-center px-4">
+      <div class="relative bg-white rounded-lg max-w-4xl w-full overflow-hidden">
+        <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-700 hover:text-red-600 text-3xl z-10">&times;</button>
+        <video id="modalVideo" class="w-full h-auto" controls autoplay></video>
+      </div>
+    </div>
 <script src="script.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -790,6 +909,29 @@ revealEls.forEach((el) => {
         window.open(url, "_blank");
       });
     });
+  });
+
+  function openModal(videoSrc) {
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    modal.classList.remove('hidden');
+    modalVideo.src = videoSrc;
+    modalVideo.play();
+    document.body.style.overflow = 'hidden'; // prevent background scroll
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    modal.classList.add('hidden');
+    modalVideo.pause();
+    modalVideo.src = '';
+    document.body.style.overflow = ''; // restore scroll
+  }
+
+  // Optional: Close modal on outside click
+  document.getElementById('videoModal').addEventListener('click', function (e) {
+    if (e.target === this) closeModal();
   });
   </script>
 </body>

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/png" href="https://static.readdy.ai/image/27783f40f8c8c9957915a346071430ca/d333c0207308ce7b94a91f6b5db54485.png">
   <title>Villa Owners | Marketing Atlas</title>
   <!-- Google Fonts: Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -10,6 +11,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
@@ -19,6 +22,8 @@
   <script>tailwind.config={theme:{extend:{colors:{primary:'#BE3C2E',secondary:'#f8f8f8'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="real-estate.css">
+  <link rel="stylesheet" href="v.css">
+
   <style>
     html, body {
       height: 100%;
@@ -295,8 +300,8 @@
     <nav class="hidden md:flex items-center space-x-6">
     <a href="index.html" class="text-gray-700 hover:text-red-600 transition-colors duration-300 font-medium">Home</a>
 
-    <a href="villa-owner.html" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Villa Owners</a>
-    <a href="real-estate.html" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Real Estate</a>
+    <a href="villa-owner.html" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">For Villa Owners</a>
+    <a href="real-estate.html" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Property Marketing</a>
     <a href="#services" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Our Services</a>
     <button id="connect-us-btn" class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-300">Connect Us</button>
     <div id="contact-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
@@ -338,8 +343,8 @@
     <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute top-[70px] left-0 w-full">
     <div class="container mx-auto px-4 py-4 flex flex-col justify-center space-y-4 text-center">
     <a href="index.html" class="text-gray-700 hover:text-primary transition-colors duration-300 py-2">Home</a>
-    <a href="villa-owner.html" class="text-gray-700 hover:text-primary transition-colors duration-300 py-2">Villa Owners</a>
-    <a href="real-estate.html" class="text-gray-700 hover:text-primary transition-colors duration-300 py-2">Real Estate</a>
+    <a href="villa-owner.html" class="text-gray-700 hover:text-primary transition-colors duration-300 py-2">For Villa Owners</a>
+    <a href="real-estate.html" class="text-gray-700 hover:text-primary transition-colors duration-300 py-2">Property Marketing</a>
     <a href="#services" class="text-gray-700 hover:text-primary transition-colors duration-300 py-2">Our Services</a>
     <button id="mobile-connect-us-btn" class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-300">Connect Us</button>
     </div>
@@ -366,17 +371,16 @@
     <!-- Main Hero Content -->
     <div class="relative z-20 text-center px-6 max-w-5xl mx-auto">
       <h1 class="hero-title text-5xl md:text-7xl font-bold mb-8">
-        <span class="text-4xl md:text-6xl font-bold bg-gradient-to-r from-red-700 to-red-400 text-transparent bg-clip-text drop-shadow-lg">
-          Premium Marketing
+        <span class="text-4xl md:text-6xl font-bold bg-gradient-to-r from-red-600 to-red-400 text-transparent bg-clip-text drop-shadow-lg">
+          Premium Marketing for
         </span>
-        <br>
-        <span class="text-white">for Villa Owners</span>
+        <span class="text-4xl md:text-6xl font-bold text-white">VILLA OWNERS</span>
       </h1>
       <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
-        Elevate your property's prestige with <strong>tailored digital strategies</strong>, exclusive branding, and elite visibility across luxury platforms.
+        Elevate your property's prestige with <strong>tailored digital strategies, exclusive branding, and elite visibility across luxury platforms</strong>.
       </p>
       <div class="flex flex-col sm:flex-row gap-6 justify-center">
-        <a href="#services" class="inline-block px-8 py-4 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-bold text-lg transition-all duration-300 btn-glow hover:scale-105">
+        <a href="#services" class="inline-block px-8 py-4 rounded-full bg-gradient-to-r from-red-600 to-red-800 text-white font-bold text-lg transition-all duration-300 hover:scale-105">
           Explore Our Services
         </a>
         <a href="#packages" class="inline-block px-8 py-4 rounded-full border-2 border-white text-white font-bold text-lg hover:bg-white hover:text-black transition-all duration-300">
@@ -631,9 +635,9 @@
   <!-- PACKAGES SECTION - Dark Theme -->
   <section id="packages" class="dark-theme py-24 px-4 relative z-10">
     <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-20">
+      <div class="text-center mb-10">
         <h2 class="section-title text-5xl md:text-6xl font-bold text-white mb-6">
-          <span class="bg-gradient-to-r from-yellow-400 to-yellow-200 text-transparent bg-clip-text">
+          <span class="bg-gradient-to-r from-red-500 to-red-400 text-transparent bg-clip-text">
             Our Packages
           </span>
         </h2>
@@ -644,34 +648,94 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-white">
         <!-- BASIC -->
-        <div class="bg-[#0f172a] border border-gray-700 rounded-xl p-8 card-hover">
-          <h3 class="text-2xl font-semibold mb-2">BASIC</h3>
-          <p class="bg-gradient-to-r from-red-500 to-yellow-400 text-white text-sm font-semibold inline-block px-4 py-1 rounded-full shadow-md mb-9 animate-pulse tracking-wide uppercase">
-            KICKSTART at  ₹15,000
+        <!-- BASIC PACKAGE - ENHANCED -->
+        <div class="bg-[#0f172a] border border-yellow-500 rounded-xl p-8 card-hover relative overflow-hidden group transform transition-transform duration-500 hover:scale-[1.03] shadow-xl">
+
+          <!-- Animated Offer Badge -->
+          <div class="absolute top-0 right-0 bg-red-600 text-white font-bold text-xs px-3 py-1 rounded-bl-xl z-10  tracking-wider">
+            ✨ Limited Time Deal
+          </div>
+
+          <h3 class="text-2xl font-bold mb-2 tracking-wide text-white drop-shadow-md">BASIC</h3>
+
+          <!-- Price Section with Old + New Price -->
+          <!-- 🔥 Premium Price Reveal -->
+          <div class="mb-8 relative w-fit group">
+
+            <!-- Glow Background -->
+            <!-- <div class="absolute inset-0 rounded-full blur-xl bg-gradient-to-r from-red-500 via-yellow-400 to-red-600 opacity-30 group-hover:opacity-60 transition duration-500 z-0"></div> -->
+
+            <!-- Price Label -->
+            <div class="relative z-10 flex items-center gap-3 px-6 py-2 bg-[#1f2937] border border-yellow-400 rounded-full shadow-xl backdrop-blur-md hover:scale-105 transition-all duration-300">
+
+              <!-- Original Price -->
+              <span class="text-sm text-gray-400 line-through tracking-wide">
+                ₹15,000
+              </span>
+
+              <!-- Offer Price -->
+              <span class="text-sm font-bold text-black bg-gradient-to-r from-yellow-300 via-red-400 to-red-600 px-4 py-1 rounded-full shadow-inner uppercase tracking-widest ">
+                Now ₹9,999
+              </span>
+              
+              <!-- Icon (optional) -->
+              <i class="fas fa-tags text-yellow-300 animate-bounce ml-1"></i>
+            </div>
+          </div>
+
+          <!-- Value Highlight -->
+          <p class="text-gray-300 text-sm italic mb-6 animate-fade-in-up delay-100">
+            Perfect for new villa owners looking to boost their presence online without a huge budget!
           </p>
-          <ul class="text-left text-sm space-y-3 mb-6">
+
+          <!-- Features List -->
+          <ul class="text-left text-sm text-white space-y-3 mb-6 animate-fade-in-up delay-200">
             <li>✅ Professional Visual Storytelling</li>
-            <li>✅ Targeted Meta & Google Advertising Campaigns</li>
+            <li>✅ Meta & Google Advertising Campaigns</li>
             <li>✅ SEO-Optimized Online Presence</li>
             <li>✅ Social Media Handle Management</li>
             <li>✅ Guest Communication & Review Management</li>
-            <li>✅ Custom Design Posts & Occasion-Based Content</li>
-            <li>✅ Performance Tracking and Reporting</li>
+            <li>✅ Custom Design Posts + Festival Content</li>
+            <li>✅ Monthly Performance Reports</li>
           </ul>
-          <a href="https://api.whatsapp.com/send?phone=919967352803&text=Hi%20Team%20Marketing%20Atlas%2C%0AI%20am%20interested%20in%20the%20*BASIC*%20Marketing%20Package%20(Kickstart%20at%20%E2%82%B915%2C000).%0A%0A*Inclusions*%3A%0A%E2%9C%85%20Professional%20Visual%20Storytelling%0A%E2%9C%85%20Targeted%20Meta%20%26%20Google%20Advertising%0A%E2%9C%85%20SEO-Optimized%20Presence%0A%E2%9C%85%20Social%20Media%20Management%0A%E2%9C%85%20Guest%20Communication%20%26%20Reviews%0A%E2%9C%85%20Custom%20Design%20Posts%0A%E2%9C%85%20Performance%20Tracking%20and%20Reports%0A%0APlease%20send%20me%20more%20details." target="_blank">
+
+          <!-- WhatsApp CTA Button -->
+          <a href="https://api.whatsapp.com/send?phone=919967352803&text=Hi%20Team%20Marketing%20Atlas%2C%0AI%20am%20interested%20in%20the%20*BASIC*%20Marketing%20Package%20(Kickstart%20Offer%20at%20%E2%82%B99%2C999%20%E2%80%93%20Original%20%E2%82%B915%2C000).%0A%0A*Inclusions*%3A%0A%E2%9C%85%20Professional%20Visual%20Storytelling%0A%E2%9C%85%20Meta%20%26%20Google%20Ads%0A%E2%9C%85%20SEO%0A%E2%9C%85%20Social%20Media%20Management%0A%E2%9C%85%20Reviews%20%26%20Guest%20Support%0A%E2%9C%85%20Festival%20Designs%0A%E2%9C%85%20Performance%20Reports%0A%0AReach%20out%20to%20me%20with%20more%20info." target="_blank">
             <button class="bg-red-500 hover:bg-red-600 px-6 py-2 rounded-full text-white font-semibold">Choose BASIC</button>
-          </a>          
+          </a>
+
+ 
         </div>
 
+
         <!-- PRO (Most Popular) -->
-        <div class="bg-[#1e293b] border-4 border-red-500 rounded-xl p-8 relative card-hover">
-          <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-            MOST POPULAR
+        <div class="bg-[#1e293b] border-4 border-red-600 rounded-xl p-8 relative card-hover">
+          <div class="absolute top-0 text-center left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                 Popular <br> ✨ Limited Time Deal ✨
           </div>
           <h3 class="text-2xl font-semibold mb-2">PRO</h3>
-          <p class="bg-gradient-to-r from-red-500 to-yellow-400 text-white text-sm font-semibold inline-block px-4 py-1 rounded-full shadow-md mb-9 animate-pulse tracking-wide uppercase">
-            KICKSTART at  ₹35,000
-          </p>
+          <div class="mb-8 relative w-fit group">
+
+            <!-- Glow Background -->
+            <!-- <div class="absolute inset-0 rounded-full blur-xl bg-gradient-to-r from-red-500 via-yellow-400 to-red-600 opacity-30 group-hover:opacity-60 transition duration-500 z-0"></div> -->
+
+            <!-- Price Label -->
+            <div class="relative z-10 flex items-center gap-3 px-6 py-2 bg-[#1f2937] border border-yellow-400 rounded-full shadow-xl backdrop-blur-md hover:scale-105 transition-all duration-300">
+
+              <!-- Original Price -->
+              <span class="text-sm text-gray-400 line-through tracking-wide">
+                ₹35,000
+              </span>
+
+              <!-- Offer Price -->
+              <span class="text-sm font-bold text-black bg-gradient-to-r from-yellow-300 via-red-400 to-red-600 px-4 py-1 rounded-full shadow-inner uppercase tracking-widest ">
+                Now ₹29,999
+              </span>
+              
+              <!-- Icon (optional) -->
+              <i class="fas fa-tags text-yellow-300 animate-bounce ml-1"></i>
+            </div>
+          </div>
           <ul class="text-left text-sm space-y-3 mb-6">
             <li>✅ Professional Photography & Videography</li>
             <li>✅ Creative Social Media Marketing</li>
@@ -694,17 +758,41 @@
               <li>⚡ Influencer Marketing based on account’s need</li>
             </ul>
           </div>
-          <a href="https://api.whatsapp.com/send?phone=919967352803&text=Hi%20Team%20Marketing%20Atlas%2C%0AI%20would%20like%20to%20explore%20the%20*PRO*%20Package%20(Kickstart%20at%20%E2%82%B935%2C000).%0A%0A*Inclusions*%3A%0A%E2%9C%85%20Photography%20%26%20Videography%0A%E2%9C%85%20Social%20Media%20Marketing%0A%E2%9C%85%20Influencer%20Marketing%0A%E2%9C%85%20Content%20Calendar%0A%E2%9C%85%20Meta%20%26%20Google%20Ads%0A%E2%9C%85%20SEO%2C%20Reviews%2C%20Post%20Design%0A%E2%9C%85%20Performance%20Tracking%0A%0A*Deliverables*%3A%0A%E2%9C%A2%206-8%20Reels%0A%E2%9C%A2%2010-12%20Posts/Carousels%0A%E2%9C%A2%2010-12%20Stories%0A%E2%9C%A2%20Influencer%20Marketing%20as%20needed%0A%0APlease%20get%20in%20touch%20with%20more%20info." target="_blank">
+          <a href="https://api.whatsapp.com/send?phone=919967352803&text=Hi%20Team%20Marketing%20Atlas%2C%0AI%20am%20interested%20in%20the%20*PRO*%20Marketing%20Package%20(Kickstart%20Offer%20at%20%E2%82%B929%2C999%20%E2%80%93%20Original%20%E2%82%B935%2C000).%0A%0A*Inclusions*%3A%0A%E2%9C%85%20Photography%20%26%20Videography%0A%E2%9C%85%20Social%20Media%20Marketing%0A%E2%9C%85%20Influencer%20Marketing%0A%E2%9C%85%20Content%20Calendar%0A%E2%9C%85%20Meta%20%26%20Google%20Ads%0A%E2%9C%85%20SEO%2C%20Reviews%2C%20Post%20Design%0A%E2%9C%85%20Performance%20Tracking%0A%0A*Deliverables*%3A%0A%E2%9C%A2%206-8%20Reels%0A%E2%9C%A2%2010-12%20Posts%2FCarousels%0A%E2%9C%A2%2010-12%20Stories%0A%E2%9C%A2%20Influencer%20Marketing%20as%20needed%0A%0APlease%20send%20me%20more%20details." target="_blank">
             <button class="bg-red-500 hover:bg-red-600 px-6 py-2 rounded-full text-white font-semibold">Choose PRO</button>
           </a>          
         </div>
 
         <!-- PREMIUM -->
-        <div class="bg-[#0f172a] border border-gray-700 rounded-xl p-8 card-hover">
+        <div class="bg-[#0f172a] border border-yellow-500 rounded-xl p-8 card-hover relative overflow-hidden group transform transition-transform duration-500 hover:scale-[1.03] shadow-xl">
+
+          <!-- Animated Offer Badge -->
+          <div class="absolute top-0 right-0 bg-red-600 text-white font-bold text-xs px-3 py-1 rounded-bl-xl z-10  tracking-wider">
+            ✨ Limited Time Deal
+          </div>
           <h3 class="text-2xl font-semibold mb-2">PREMIUM</h3>
-          <p class="bg-gradient-to-r from-red-500 to-yellow-400 text-white text-sm font-semibold inline-block px-4 py-1 rounded-full shadow-md mb-9 animate-pulse tracking-wide uppercase">
-            KICKSTART at  ₹50,000
-          </p>
+          <div class="mb-8 relative w-fit group">
+
+            <!-- Glow Background -->
+            <!-- <div class="absolute inset-0 rounded-full blur-xl bg-gradient-to-r from-red-500 via-yellow-400 to-red-600 opacity-30 group-hover:opacity-60 transition duration-500 z-0"></div> -->
+
+            <!-- Price Label -->
+            <div class="relative z-10 flex items-center gap-3 px-6 py-2 bg-[#1f2937] border border-yellow-400 rounded-full shadow-xl backdrop-blur-md hover:scale-105 transition-all duration-300">
+
+              <!-- Original Price -->
+              <span class="text-sm text-gray-400 line-through tracking-wide">
+                ₹50,000
+              </span>
+
+              <!-- Offer Price -->
+              <span class="text-sm font-bold text-black bg-gradient-to-r from-yellow-300 via-red-400 to-red-600 px-4 py-1 rounded-full shadow-inner uppercase tracking-widest ">
+                Now ₹39,999
+              </span>
+              
+              <!-- Icon (optional) -->
+              <i class="fas fa-tags text-yellow-300 animate-bounce ml-1"></i>
+            </div>
+          </div>
           <ul class="text-left text-sm space-y-3 mb-6">
             <li>✅ Associated Customer Service Executive</li>
             <li>✅ Associated Sales Executive</li>
@@ -729,7 +817,7 @@
               <li>⚡ Influencer Marketing based on account’s need</li>
             </ul>
           </div>
-          <a href="https://api.whatsapp.com/send?phone=919967352803&text=Hi%20Team%20Marketing%20Atlas%2C%0AI%20am%20interested%20in%20the%20*PREMIUM*%20Package%20(Kickstart%20at%20%E2%82%B950%2C000).%0A%0A*Includes*%3A%0A%E2%9C%85%20Dedicated%20Customer%20%26%20Sales%20Execs%0A%E2%9C%85%20Photography%2C%20Videography%0A%E2%9C%85%20Meta%20Ads%2C%20SEO%0A%E2%9C%85%20Sales%20%26%20Marketing%20Management%0A%E2%9C%85%20Email%20%26%20WhatsApp%20Marketing%0A%E2%9C%85%20Reports%20%26%20Performance%0A%0A*Deliverables*%3A%0A%E2%9C%A2%206-8%20Reels%0A%E2%9C%A2%2010-12%20Static%20Posts%0A%E2%9C%A2%2010-12%20Stories%0A%E2%9C%A2%20Influencer%20Marketing%20as%20needed%0A%0ALet%20me%20know%20how%20to%20proceed." target="_blank">
+          <a href="https://api.whatsapp.com/send?phone=919967352803&text=Hi%20Team%20Marketing%20Atlas%2C%0AI%20am%20interested%20in%20the%20*PREMIUM*%20Marketing%20Package%20(Kickstart%20Offer%20at%20%E2%82%B939%2C999%20%E2%80%93%20Original%20%E2%82%B950%2C000).%0A%0A*Inclusions*%3A%0A%E2%9C%85%20Dedicated%20Customer%20%26%20Sales%20Execs%0A%E2%9C%85%20Photography%2C%20Videography%0A%E2%9C%85%20Meta%20Ads%2C%20SEO%0A%E2%9C%85%20Sales%20%26%20Marketing%20Management%0A%E2%9C%85%20Email%20%26%20WhatsApp%20Marketing%0A%E2%9C%85%20Reports%20%26%20Performance%0A%0A*Deliverables*%3A%0A%E2%9C%A2%206-8%20Reels%0A%E2%9C%A2%2010-12%20Static%20Posts%0A%E2%9C%A2%2010-12%20Stories%0A%E2%9C%A2%20Influencer%20Marketing%20as%20needed%0A%0AHow%20can%20I%20get%20started%3F" target="_blank">
             <button class="bg-red-500 hover:bg-red-600 px-6 py-2 rounded-full text-white font-semibold">Choose PREMIUM</button>
           </a>          
         </div>
@@ -740,7 +828,7 @@
   <!-- ONE TIME SHOOT PACK SECTION - Bright Theme -->
   <section class="bright-theme py-24 px-4 relative z-10">
     <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16">
+      <div class="text-center mb-10">
         <h2 class="section-title text-5xl md:text-6xl font-bold text-gray-800 mb-6">
           <span class="bg-gradient-to-r from-red-600 to-yellow-600 text-transparent bg-clip-text">
             One Time Shoot Pack
@@ -752,16 +840,16 @@
       </div>
 
       <div class="shoot-pack-card p-12">
-        <div class="text-center mb-12">
+        <div class="text-center mb-8">
           <div class="inline-block bg-red-600 text-white px-6 py-3 rounded-full text-lg font-bold mb-6">
             PHOTOGRAPHY SOLUTION
           </div>
-          <div class="text-6xl font-bold bg-gradient-to-r from-red-600 to-red-400 text-transparent bg-clip-text mb-6">₹75,000</div>
+          <div class="text-6xl font-bold bg-gradient-to-r from-red-600 to-red-400 text-transparent bg-clip-text mb-6">₹50,000</div>
           <h3 class="text-3xl font-bold text-gray-800 mb-4">Professional Villa Photography</h3>
           <p class="text-xl text-gray-600">Same-day delivery • Quick market entry • Professional quality</p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-12">
+        <div class="grid md:grid-cols-2 gap-6">
           <!-- Per Room Deliverables -->
           <div class="bg-gray-50 rounded-2xl p-8">
             <h4 class="text-2xl font-bold text-gray-800 mb-6 text-center">
@@ -831,13 +919,114 @@
         </div>
 
         <div class="text-center mt-12">
-          <a href="https://api.whatsapp.com/send?phone=919967352803&text=Hi%20Team%2C%0AI%20am%20interested%20in%20the%20*One-Time%20Shoot%20Pack*%20for%20%E2%82%B975%2C000.%0A%0A*Inclusions*%3A%0A%F0%9F%93%B7%20Interior%3A%2010%20High%20Quality%20Images%2C%2010%20Vertical%20Shots%2C%2010%20Horizontal%20Shots%2C%204%20Videos%2C%204%20Vertical%20180%C2%B0%2C%204%20Horizontal%20180%C2%B0%0A%F0%9F%8C%BF%20Exterior%3A%20Reels%20(10-12)%2C%20Images%20as%20needed%0A%0AAdd-ons%3A%20Professional%20equipment%2C%20same-day%20delivery%2C%20expert%20photographers%2C%20multi-format%20outputs%0A%0APlease%20share%20details%20to%20book." target="_blank">
+          <a href="https://api.whatsapp.com/send?phone=919967352803&text=Hi%20Team%2C%0AI%20am%20interested%20in%20the%20*One-Time%20Shoot%20Pack*%20for%20%E2%82%B950%2C000.%0A%0A*Inclusions*%3A%0A%F0%9F%93%B7%20Interior%3A%2010%20High%20Quality%20Images%2C%2010%20Vertical%20Shots%2C%2010%20Horizontal%20Shots%2C%204%20Videos%2C%204%20Vertical%20180%C2%B0%2C%204%20Horizontal%20180%C2%B0%0A%F0%9F%8C%BF%20Exterior%3A%20Reels%20(10-12)%2C%20Images%20as%20needed%0A%0AAdd-ons%3A%20Professional%20equipment%2C%20same-day%20delivery%2C%20expert%20photographers%2C%20multi-format%20outputs%0A%0APlease%20share%20details%20to%20book." target="_blank">
             <button class="bg-gradient-to-r from-red-600 to-red-500 text-white font-bold px-12 py-5 rounded-2xl hover:from-red-700 hover:to-red-600 transition text-xl transform hover:scale-105">Book Your Shoot Today</button>
           </a>          
         </div>
       </div>
     </div>
   </section>
+
+  <!-- OUR RECENT WORK SECTION -->
+<section id="hero">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-4xl font-bold text-gray-900 mb-6 text-white"><br>Our Recent Work</h2>
+    <p class="text-lg text-white mb-10 max-w-3xl mx-auto">
+      A glimpse into the quality we deliver — curated walkthroughs, high-end cinematics, and premium real estate promotions.
+    </p>
+  
+
+    <!-- Video Carousel -->
+  <section class="video-carousel-container">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <div class="video-wrapper">
+            <video class="plyr" controls playsinline preload="none" poster="1.png">
+              <source src="SIERRA VERTICAL FINAL.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <div class="video-wrapper">
+            <video class="plyr" controls playsinline preload="none" poster="2.png">
+              <source src="NYSA GRADED FINAL.MOV" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </div>
+      <!-- Navigation -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+
+      <!-- Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+</section>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
+<script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+
+<script>
+  const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1.1,
+    spaceBetween: 10,
+    grabCursor: true,
+    loop: false,
+    allowTouchMove: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 1.2,
+        spaceBetween: 10
+      },
+      768: {
+        slidesPerView: 1.5,
+        spaceBetween: 20
+      },
+      1024: {
+        slidesPerView: 2,
+        spaceBetween: 30
+      }
+    }
+  });
+
+  // Setup Plyr players
+  const players = Plyr.setup('.plyr', {
+      controls: [
+        'play-large', 'play', 'progress', 'current-time', 'duration',
+        'mute', 'volume', 'captions', 'settings', 'fullscreen'
+      ],
+      keyboard: {
+        focused: true,  // Only affects the focused player
+        global: false   // Prevent global keybindings (fixes spacebar issue)
+      }
+    });
+  
+    // Ensure only one video plays at a time
+    players.forEach((player, index) => {
+      player.on('play', () => {
+        players.forEach((otherPlayer, otherIndex) => {
+          if (otherIndex !== index) {
+            otherPlayer.pause();
+          }
+        });
+      });
+    });
+</script>
 
   <!-- Contact Section -->
   <section id="connect" class="py-20 bg-white">
@@ -1035,6 +1224,29 @@
             window.open(url, "_blank");
           });
         });
+      });
+
+      function openModal(videoSrc) {
+        const modal = document.getElementById('videoModal');
+        const modalVideo = document.getElementById('modalVideo');
+        modal.classList.remove('hidden');
+        modalVideo.src = videoSrc;
+        modalVideo.play();
+        document.body.style.overflow = 'hidden'; // prevent background scroll
+      }
+
+      function closeModal() {
+        const modal = document.getElementById('videoModal');
+        const modalVideo = document.getElementById('modalVideo');
+        modal.classList.add('hidden');
+        modalVideo.pause();
+        modalVideo.src = '';
+        document.body.style.overflow = ''; // restore scroll
+      }
+
+      // Optional: Close modal on outside click
+      document.getElementById('videoModal').addEventListener('click', function (e) {
+        if (e.target === this) closeModal();
       });
       </script>
 </body>
