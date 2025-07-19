@@ -821,20 +821,21 @@
         <div>
           <div class="bg-black bg-opacity-50 rounded-xl p-8 backdrop-blur-sm">
             <h3 class="text-2xl font-bold mb-6">Get Your Free Marketing Audit</h3>
-            <form class="space-y-4">
+            <form id="strategyForm" class="space-y-4">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input type="text" placeholder="Your Name" 
+                <input id="name" type="text" placeholder="Your Name" 
                   class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:border-red-500 text-white">
-                <input type="email" placeholder="Email Address" 
+                <input id="email" type="email" placeholder="Email Address" 
                   class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:border-red-500 text-white">
               </div>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input type="tel" placeholder="Phone Number" 
+                <input id="phone" type="tel" placeholder="Phone Number" 
                   class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:border-red-500 text-white">
-                <input type="text" placeholder="Company Name" 
+                <input id="company" type="text" placeholder="Company Name" 
                   class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:border-red-500 text-white">
               </div>
-              <select class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:border-red-500 text-white">
+              <select id="projectType"
+                class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:border-red-500 text-white">
                 <option>Select Project Type</option>
                 <option>Residential Apartments</option>
                 <option>Villas & Row Houses</option>
@@ -842,7 +843,7 @@
                 <option>Plots & Land</option>
                 <option>Mixed Development</option>
               </select>
-              <textarea placeholder="Tell us about your project..." rows="4"
+              <textarea id="projectDetails" placeholder="Tell us about your project..." rows="4"
                 class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:border-red-500 text-white resize-none"></textarea>
               <button type="submit"
                 class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 text-lg">
@@ -998,40 +999,42 @@
   <script src="real-estate.js"></script>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const forms = document.querySelectorAll("form");
-    
-      forms.forEach((form) => {
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
-    
-          const name = form.querySelector("[name='name']")?.value || "";
-          const email = form.querySelector("[name='email']")?.value || "";
-          const phone = form.querySelector("[name='phone']")?.value || "";
-          const company = form.querySelector("[name='company']")?.value || "";
-          const subject = form.querySelector("[name='subject']")?.value || "";
-          const projectType = form.querySelector("[name='projectType']")?.value || "";
-          const message = form.querySelector("[name='message']")?.value || "";
-    
-          const whatsappText = `
-    *"New Enquiry from"*
-    
-    *Full Name:* ${name}
-    *Email:* ${email}
-    ${phone ? `*Phone:* ${phone}` : ""}
-    ${company ? `*Company:* ${company}` : ""}
-    ${subject ? `*Subject:* ${subject}` : ""}
-    ${projectType && projectType !== 'Select Project Type' ? `*Project Type:* ${projectType}\n` : ""}
-    *Message:* ${message}
-          `;
-    
-          const encoded = encodeURIComponent(whatsappText);
-          const number = "919967352803";
-          const url = `https://wa.me/${number}?text=${encoded}`;
-          window.open(url, "_blank");
-        });
-      });
-    });
+  document.getElementById("strategyForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const company = document.getElementById("company").value.trim();
+
+    // Get full text of selected project type
+    const projectTypeSelect = document.getElementById("projectType");
+    const projectType = projectTypeSelect.options[projectTypeSelect.selectedIndex].text;
+
+    // Get entire project details, including all line breaks
+    const rawProjectDetails = document.getElementById("projectDetails").value.trim();
+    const projectDetails = encodeURIComponent(rawProjectDetails);
+
+    // Validate
+    if (!name || !email || !phone || !company || projectType === "Select Project Type") {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
+    // Compose WhatsApp message (encode manually for special characters)
+    const message = `Hello, I would like a free marketing strategy call.%0A%0A` +
+      `Name: ${encodeURIComponent(name)}%0A` +
+      `Email: ${encodeURIComponent(email)}%0A` +
+      `Phone: ${encodeURIComponent(phone)}%0A` +
+      `Company: ${encodeURIComponent(company)}%0A` +
+      `Project Type: ${encodeURIComponent(projectType)}%0A` +
+      `Project Details: ${projectDetails}`;
+
+    const whatsappNumber = "919967352803";
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+    window.open(whatsappURL, "_blank");
+  });
     </script>
 
 </body>
