@@ -131,6 +131,15 @@
   margin-bottom: 16px;
 }
 
+.package-badge1 {
+  background: linear-gradient(45deg, #000000, #242121);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 16px;
+}
 
 .whatsapp-float {
 position: fixed;
